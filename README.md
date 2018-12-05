@@ -2,6 +2,11 @@
 
 > My mind-blowing Nuxt.js project
 
+### feature
+
+- follow latest vue, next-vue-cli , vue-router vuex 
+
+
 ## Build Setup
 
 ``` bash
