@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <div>
-      <logo/>
+      <logo />
       <h1 class="title">
         nuxt-app-demo
       </h1>
@@ -9,12 +9,10 @@
         My mind-blowing Nuxt.js project
       </h2>
       <div class="links">
-        <a
-          href="https://nuxtjs.org/"
+        <a href="https://nuxtjs.org/"
           target="_blank"
           class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
+        <a href="https://github.com/nuxt/nuxt.js"
           target="_blank"
           class="button--grey">GitHub</a>
       </div>
@@ -23,17 +21,26 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import Logo from "~/components/Logo.vue";
 
 export default {
+  async asyncData({ store, error }) {
+    // 对 axios 进行批量处理
+    let res = await store.dispatch("banner").catch(e => {
+      error({ statusCode: 404, message: "Post not found" });
+    });
+    console.log(res);
+    return {
+      banner: res.banner
+    };
+  },
   components: {
     Logo
   }
-}
+};
 </script>
 
 <style>
-
 .container {
   min-height: 100vh;
   display: flex;
@@ -43,8 +50,8 @@ export default {
 }
 
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
