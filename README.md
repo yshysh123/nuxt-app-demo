@@ -5,6 +5,7 @@
 ### feature
 
 - follow latest vue, next-vue-cli , vue-router vuex 
+- use less for style
 
 
 ## Build Setup
