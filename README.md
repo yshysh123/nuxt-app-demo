@@ -7,6 +7,7 @@
 - follow latest vue, next-vue-cli , vue-router vuex 
 - use less for style
 - 增加国际化配置，使用 i18n，配置具体使用方式见插件中的 i18n 
+- 图表使用vue-chartjs 页面见/examples/chart
 
 
 ## Build Setup
