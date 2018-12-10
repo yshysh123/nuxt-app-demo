@@ -6,16 +6,8 @@
         nuxt-app-demo
       </h1>
       <h2 class="subtitle">
-        My mind-blowing Nuxt.js project
+        nuxt elementUi koa2 vuex i18n
       </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
     </div>
   </section>
 </template>
@@ -24,15 +16,6 @@
 import Logo from "~/components/Logo.vue";
 
 export default {
-  async asyncData({ store, error }) {
-    // 对 axios 进行批量处理
-    let res = await store.dispatch("banner").catch(e => {
-      error({ statusCode: 404, message: "Post not found" });
-    });
-    return {
-      banner: res.banner
-    };
-  },
   components: {
     Logo
   }
@@ -41,7 +24,7 @@ export default {
 
 <style>
 .container {
-  min-height: 100vh;
+  min-height: calc(100vh - 3rem);
   display: flex;
   justify-content: center;
   align-items: center;

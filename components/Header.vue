@@ -5,24 +5,21 @@
         class="el-menu-demo"
         mode="horizontal"
         @select="handleSelect">
-        <el-menu-item index="1">处理中心</el-menu-item>
+        <el-menu-item index="/">首页</el-menu-item>
         <el-submenu index="2">
-          <template slot="title">我的工作台</template>
-          <el-menu-item index="2-1">选项1</el-menu-item>
-          <el-menu-item index="2-2">选项2</el-menu-item>
-          <el-menu-item index="2-3">选项3</el-menu-item>
-          <el-submenu index="2-4">
+          <template slot="title">我的示例</template>
+          <el-menu-item index="/examples">Element组件</el-menu-item>
+          <el-menu-item index="/examples/table">ELement表格</el-menu-item>
+          <el-menu-item index="/examples/chart">可视化图表</el-menu-item>
+          <!-- <el-submenu index="2-4">
             <template slot="title">选项4</template>
-            <el-menu-item index="2-4-1">选项1</el-menu-item>
-            <el-menu-item index="2-4-2">选项2</el-menu-item>
-            <el-menu-item index="2-4-3">选项3</el-menu-item>
-          </el-submenu>
+            <el-menu-item index="/2-4-1">选项1</el-menu-item>
+            <el-menu-item index="/2-4-2">选项2</el-menu-item>
+            <el-menu-item index="/2-4-3">选项3</el-menu-item>
+          </el-submenu> -->
         </el-submenu>
-        <el-menu-item index="3"
-          disabled>消息中心</el-menu-item>
-        <el-menu-item index="4">
-          <a href="https://www.ele.me"
-            target="_blank">订单管理</a>
+        <el-menu-item index="/NotFound">
+          无路由页面
         </el-menu-item>
       </el-menu>
       <div class="language">
@@ -49,9 +46,7 @@ export default {
   name: "VHeader",
   data() {
     return {
-      maxClientWidth: 980,
-      activeIndex: "1",
-      activeIndex2: "1",
+      activeIndex: "/",
       language: ""
     };
   },
@@ -59,6 +54,7 @@ export default {
   mounted() {
     const _lang = localStorage.getItem("lang") || "zh";
     this.getLanguage(_lang);
+    this.activeIndex = this.$route.fullPath;
   },
   methods: {
     handleSelect(key, keyPath) {
@@ -91,15 +87,16 @@ export default {
   left: 0;
   right: 0;
   z-index: 99;
-  height: 5rem;
+  height: 3rem;
   text-align: center;
   background: #fff;
   color: #909090;
   border-bottom: 1px solid #f1f1f1;
+  min-width: 600px;
   .headerContent {
     overflow: hidden;
     margin: auto;
-    max-width: 1280px;
+    max-width: 90%;
     .el-menu-demo {
       height: 100%;
       float: left;
@@ -109,13 +106,16 @@ export default {
       .el-menu-item,
       .el-submenu__title {
         height: 100%;
-        line-height: 4.7rem;
+        line-height: 2.7rem;
       }
+    }
+    .el-menu.el-menu--horizontal {
+      border-bottom: none;
     }
     .language {
       float: right;
       font-size: 16px;
-      line-height: 5rem;
+      line-height: 3rem;
       color: #fff;
       .el-dropdown-link {
         position: relative;

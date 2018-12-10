@@ -1,10 +1,17 @@
 const Koa = require('koa')
+const bodyParser = require('koa-bodyparser')
+const cors = require('koa2-cors')
+const controller = require('./controller')
 const { Nuxt, Builder } = require('nuxt')
 
 async function start() {
   const app = new Koa()
-  // const host = process.env.HOST || '127.0.0.1'
+  const host = process.env.HOST || '127.0.0.1'
   const port = process.env.PORT || 3000
+
+  app.use(bodyParser())
+  app.use(cors())
+  app.use(controller())
 
   // Import and Set Nuxt.js options
   let config = require('../nuxt.config.js')
@@ -33,7 +40,7 @@ async function start() {
   })
 
   app.listen(port)
-  console.log('Server listening on :' + port) // eslint-disable-line no-console
+  console.log('Server listening on ' + host + ':' + port) // eslint-disable-line no-console
 }
 
 start()

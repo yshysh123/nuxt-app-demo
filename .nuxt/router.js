@@ -4,6 +4,7 @@ import { interopDefault } from './utils'
 
 const _fda4241a = () => interopDefault(import('..\\pages\\examples\\index.vue' /* webpackChunkName: "pages_examples_index" */))
 const _0f9036ff = () => interopDefault(import('..\\pages\\examples\\chart.vue' /* webpackChunkName: "pages_examples_chart" */))
+const _3ac922ef = () => interopDefault(import('..\\pages\\examples\\table.vue' /* webpackChunkName: "pages_examples_table" */))
 const _1ded23dc = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
 
 Vue.use(Router)
@@ -71,6 +72,10 @@ export function createRouter() {
       path: "/examples/chart",
       component: _0f9036ff,
       name: "examples-chart"
+    }, {
+      path: "/examples/table",
+      component: _3ac922ef,
+      name: "examples-table"
     }, {
       path: "/",
       component: _1ded23dc,
