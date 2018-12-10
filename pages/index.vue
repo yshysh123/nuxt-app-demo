@@ -29,7 +29,6 @@ export default {
     let res = await store.dispatch("banner").catch(e => {
       error({ statusCode: 404, message: "Post not found" });
     });
-    console.log(res);
     return {
       banner: res.banner
     };

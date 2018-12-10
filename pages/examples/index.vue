@@ -211,11 +211,10 @@
 </template>
 
 <script>
-import Vue from "vue";
 import NewActivity from "@/components/examples/NewActivity";
 import { mapActions, mapState } from "vuex";
 export default {
-  name: "user",
+  name: "index",
   components: {
     NewActivity
   },
@@ -261,21 +260,25 @@ export default {
 
 <style lang="less" scoped>
 .content {
-  margin-bottom: 35px;
+  margin-bottom: 25px;
+  min-width: 700px;
   .el-row {
-    margin-top: 35px;
+    margin-top: 25px;
   }
   .el-card .el-row {
-    margin-top: 20px;
+    margin-top: 10px;
   }
   .el-card .el-row:first-child {
     margin-top: 0px;
+  }
+  .el-col {
+    margin-bottom: 15px;
   }
   @media (max-width: 768px) {
     .el-card .el-row {
       margin-top: 0px;
       .el-col {
-        margin-top: 20px;
+        margin-top: 10px;
       }
       &:first-child {
         margin-top: -20px;

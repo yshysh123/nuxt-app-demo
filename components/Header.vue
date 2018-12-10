@@ -109,7 +109,7 @@ export default {
       .el-menu-item,
       .el-submenu__title {
         height: 100%;
-        line-height: 5rem;
+        line-height: 4.7rem;
       }
     }
     .language {

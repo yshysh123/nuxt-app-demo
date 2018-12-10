@@ -34,10 +34,6 @@ export const state = () => ({
       disabled: true,
     },
     {
-      value: 'GuangZhou',
-      label: 'activity.city.gz',
-    },
-    {
       value: 'Lyster',
       label: 'activity.city.ly',
     },
