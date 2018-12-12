@@ -8,7 +8,7 @@
 - use less for style
 - 增加国际化配置，使用 i18n，配置具体使用方式见插件中的 i18n 
 - 图表使用vue-chartjs 页面见/examples/chart
-
+- UI 库使用 element 按需加载 对应使用组件在 plugins 里
 
 ## Build Setup
 
