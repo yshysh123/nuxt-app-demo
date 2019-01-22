@@ -10,6 +10,7 @@
 <script>
 import VHeader from "~/components/Header";
 export default {
+  middleware: "activeIndex",
   components: {
     VHeader
   }

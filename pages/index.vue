@@ -14,17 +14,10 @@
 
 <script>
 import Logo from "~/components/Logo.vue";
-import { mapMutations } from "vuex";
 
 export default {
   components: {
     Logo
-  },
-  created() {
-    this.SET_ACTIVEINDEX("/");
-  },
-  methods: {
-    ...mapMutations(["SET_ACTIVEINDEX"])
   }
 };
 </script>

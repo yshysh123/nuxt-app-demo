@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import { mapMutations, mapState } from "vuex";
+import { mapState } from "vuex";
 export default {
   name: "VHeader",
   data() {
@@ -49,10 +49,8 @@ export default {
   mounted() {
     const _lang = localStorage.getItem("lang") || "zh";
     this.getLanguage(_lang);
-    this.SET_ACTIVEINDEX(this.$route.fullPath);
   },
   methods: {
-    ...mapMutations(["SET_ACTIVEINDEX"]),
     handleSelect(key, keyPath) {
       this.$router.push(key);
     },
