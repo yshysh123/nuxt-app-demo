@@ -1,6 +1,3 @@
-import Vue from 'vue'
-import axios from 'axios'
-
 export const strict = true
 
 export const state = () => ({
@@ -10,6 +7,7 @@ export const state = () => ({
   isMenuHidden: false,
   account: null,
   session: null,
+  activeIndex: '/',
 })
 
 export const mutations = {
@@ -18,6 +16,9 @@ export const mutations = {
     if (state.locales.indexOf(normalized) !== -1) {
       state.locale = normalized
     }
+  },
+  SET_ACTIVEINDEX(state, activeIndex) {
+    state.activeIndex = activeIndex
   },
 }
 

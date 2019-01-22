@@ -11,12 +11,6 @@
           <el-menu-item index="/examples">Element组件</el-menu-item>
           <el-menu-item index="/examples/table">ELement表格</el-menu-item>
           <el-menu-item index="/examples/chart">可视化图表</el-menu-item>
-          <!-- <el-submenu index="2-4">
-            <template slot="title">选项4</template>
-            <el-menu-item index="/2-4-1">选项1</el-menu-item>
-            <el-menu-item index="/2-4-2">选项2</el-menu-item>
-            <el-menu-item index="/2-4-3">选项3</el-menu-item>
-          </el-submenu> -->
         </el-submenu>
         <el-menu-item index="/NotFound">
           无路由页面
@@ -41,22 +35,24 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapMutations, mapState } from "vuex";
 export default {
   name: "VHeader",
   data() {
     return {
-      activeIndex: "/",
       language: ""
     };
   },
-  computed: {},
+  computed: {
+    ...mapState(["activeIndex"])
+  },
   mounted() {
     const _lang = localStorage.getItem("lang") || "zh";
     this.getLanguage(_lang);
-    this.activeIndex = this.$route.fullPath;
+    this.SET_ACTIVEINDEX(this.$route.fullPath);
   },
   methods: {
+    ...mapMutations(["SET_ACTIVEINDEX"]),
     handleSelect(key, keyPath) {
       this.$router.push(key);
     },
